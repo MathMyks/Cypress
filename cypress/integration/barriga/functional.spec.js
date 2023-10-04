@@ -9,7 +9,7 @@ describe('Should test at a funcional level', () => {
         cy.get('.toast-message').should('contain', 'Bem vindo')
     })
 
-    it('Should creat an count', ()=>{
+    it('Should create an account', ()=>{
         cy.get('[data-test=menu-settings]').click()
         cy.get('[href="/contas"]').click()
         cy.get('[data-test=nome]').type('Conta teste')
@@ -17,8 +17,9 @@ describe('Should test at a funcional level', () => {
         cy.get('.toast-message').should('contain', 'Conta inserida com sucesso!')
     })
 
-    it.only('Should update an account', () => {
-        cy.get(':nth-child(7) > :nth-child(2) > :nth-child(1) > .far')   
+    it('Should update an account', () => {
+        cy.xpath("//td[contains(.,'Conta teste')]/../td/a/i[@class='far fa-edit']").click()
+
   })
 })
 
